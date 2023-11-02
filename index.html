@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo App</title>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full bg-white p-8 rounded-md shadow-lg">
+      <h1
+        class="text-3xl font-bold text-center text-slate-700 mb-6 pb-3 border-b-2 border-slate-300"
+      >
+        My Todo
+      </h1>
+      <div class="flex mb-4">
+        <input
+          type="text"
+          id="todo-input"
+          class="flex-1 p-2 rounded-l focus:outline-none"
+          placeholder="Your plans for today..."
+        />
+        <button
+          class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700"
+          type="button"
+          id="add-todo-Btn"
+          onclick="addTask()"
+        >
+          Add Task
+        </button>
+
+        <button class="hidden bg-teal-500 w-[150px] rounded-md p-2 text-white hover:bg-yellow-700 mx-auto md:w-auto"
+        type="button" id="update-task-Btn" onclick="updateTask()">Update Todo</button>
+      </div>
+      <p id="alert-message" class="text-center text-red-600 hidden"></p>
+      <div id="taskContainer"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
