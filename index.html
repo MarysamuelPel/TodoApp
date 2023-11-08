@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Todo App</title>
-  </head>
-  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="max-w-md w-full bg-white p-8 rounded-md shadow-lg">
-      <h1
-        class="text-3xl font-bold text-center text-slate-700 mb-6 pb-3 border-b-2 border-slate-300"
-      >
-        My Todo
-      </h1>
-      <div class="flex mb-4">
-        <input
-          type="text"
-          id="todo-input"
-          class="flex-1 p-2 rounded-l focus:outline-none"
-          placeholder="Your plans for today..."
-        />
-        <button
-          class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700"
-          type="button"
-          id="add-todo-Btn"
-          onclick="addTask()"
-        >
-          Add Task
-        </button>
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo-yy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+</head>
 
-        <button class="hidden bg-teal-500 w-[150px] rounded-md p-2 text-white hover:bg-yellow-700 mx-auto md:w-auto"
-        type="button" id="update-task-Btn" onclick="updateTask()">Update Todo</button>
-      </div>
-      <p id="alert-message" class="text-center text-red-600 hidden"></p>
-      <div id="taskContainer"></div>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center ">
+  <div class="max-w-md w-full bg-white p-8 rounded-md shadow-lg">
+      <header class="flex flex-row justify-center
+       gap-10 px-5 py-4 border-b border-slate-400 max-w-lg mx-auto">
+        <h1 class="text-2xl text-center font-bold text-slate-800 ">
+          Todo-yy
+        </h1>
+      </header>
+
+      <main class="px-5 mt-10 max-w-lg mx-auto">
+        <form onsubmit="createTodo(event)" class="flex flex-col items-center
+         sm:flex-row gap-2">
+          <input placeholder="Put in your plans for today!"
+             class="flex-1 p-2 rounded-l focus:outline-none" id="todo-input" />
+          <button id="add-todo-btn"
+            class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700">
+            Add todo
+          </button>
+          <button id="update-todo-btn" onclick="updateTodo()"
+            class="bg-purple-500 rounded-lg px-3 py-2 text-sm text-white
+             w-[100px] hidden align-self-start">
+            Update todo
+          </button>
+        </form>
+        <span class="hidden ml-2 text-sm text-red-500" id="form-message">
+          Please add a Todo</span>
+
+        <!-- todo text area -->
+        <div class="mt-5" id="todos">
+
+        </div>
+      </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-    <script src="./index.js"></script>
-  </body>
+  </div>
+  <script src="./utility.js"></script>
+  <script src="./index.js"></script>
+</body>
+
 </html>
